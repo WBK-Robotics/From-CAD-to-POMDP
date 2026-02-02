@@ -186,53 +186,8 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+
+
 
   <main id="main-content">
   <section class="hero">
@@ -311,7 +266,7 @@
       </video>
       <!-- TODO: Replace with your video description -->
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Our proposed system is capable of disassembling end-of-life products while adapting to uncertainties such as stuck or missing parts by modeling the task as a partially observable Markov decision process (POMDP).
       </h2>
     </div>
   </div>
@@ -337,122 +292,57 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Disassembly Planning as a POMDP</h2>
+              <p>
+                We model disassembly planning as a Partially Observable Markov Decision Process (POMDP) that is automatically constructed from CAD data. The product state represents how parts can be separated, using directional disassembly relations between part pairs. Unlike prior binary representations, these relations are interpreted probabilistically, allowing uncertainty about whether parts are actually movable.
+EOL conditions are modeled as hidden operations of the nominal CAD-derived structure, modifying disassembly relations.
+              </p><p>
+                <video poster="" id="tree" autoplay="" controls="" muted="" loop="" height="100%">
+          <!-- Your video here -->
+          <source src="static/videos/psi_modelling.mp4" type="video/mp4">
+        </video>
+          </p>
+          <p> 
+            The action space comprises discrete part-removal actions, executed either non-destructively or destructively with one action per part and tool. 
+            Including destructive actions is essential for end-of-life disassembly, as EOL conditions such as corrosion can block all normal removal paths. 
+            Destructive actions modify the product structure itself by creating new feasible disassembly directions, ensuring progress when non-destructive actions fail as seen with the following rivet example:
+          </p><p>
+            <img src="static/images/rivet-example.png" alt="Rivet Example" />
+          </p>
+        </div>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
-  </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
 
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Results for a sample Implementation</h2>
+              <p>
+                Based on the general POMDP formulation, we implement a task and motion planning framework that automatically derives specific POMDP models from CAD data, robot capabilities, and inspection results. This system is evaluated on three different products using two distinct robotic setups. The system architecture of the implementation is shown below:
+              </p><p>
+               <img src="static/images/architecture.png" alt="System Architecture" />
+          </p>
+          <p> 
+            The results show that the POMDB based planning is more robust in the process of end of life conditions such as corrosion or missing parts. It can adapt to these changes on the fly as shown below.
+            The paper also shows that the system outperforms deterministic baselines in terms of average disassembly time and variance.
+          </p><p>
+            <img src="static/images/disassembly-results.png" alt="Disassembly Results" />
+          </p>
+        </div>
         </div>
       </div>
     </div>
-  </div>
 </section>
-<!-- End youtube video -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 
@@ -466,16 +356,26 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <pre id="bibtex-code"><code>@misc{baumgärtner2025cadpomdpprobabilisticplanning,
+      title={From CAD to POMDP: Probabilistic Planning for Robotic Disassembly of End-of-Life Products}, 
+      author={Jan Baumgärtner and Malte Hansjosten and David Hald and Adrian Hauptmannl and Alexander Puchta and Jürgen Fleischer},
+      year={2025},
+      eprint={2511.23407},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2511.23407}, 
 }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+ This work was funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) - SFB-1574 - 471687386.
+ More information about the SFB-1574 can be found at <a href="http://crc1574.com" target="_blank">http://crc1574.com</a>.
+  </div>
+</section>
 
 
   <footer class="footer">
